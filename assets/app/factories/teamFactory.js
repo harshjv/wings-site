@@ -54,13 +54,16 @@ app.factory('teamFactory', function ($translate, $q) {
 		name: 'Harsh Vakharia',
 		pic: 'harsh',
 		title: 'Full Stack Developer',
-		bio: 'Passioned engineer. Loves to create new solutions and admires simplicity. Harsh likes to experiment and has built applications based on technologies such as C, Node.js, Docker, IPFS, Android and Ethereum.',
+		bio: 'Passionate engineer. Loves to create something people want, and admires simplicity. Harsh likes to experiment with Node.js and Docker. He develops FOSS and enjoys contributing back to open community.',
 		social: [{
 		  name: 'fb',
-		  link: 'https://www.facebook.com/whyrusleeping'
+		  link: 'https://www.facebook.com/profile.php?id=1684195558'
 		}, {
 		  name: 'in',
 		  link: 'https://www.linkedin.com/in/harshjv'
+		}, {
+		  name: 'tw',
+		  link: 'https://twitter.com/harshjv'
 		}]
 	 },
 	 {
@@ -133,20 +136,20 @@ app.factory('teamFactory', function ($translate, $q) {
 		bio: 'A legal and subject matter expert in Bitcoin, cryptocurrency, and decentralized technologies. In 2011, wrote about the legal considerations of pseudonymous Bitcoin/e-cash. I advise and consult with entrepreneurs, technologists, and policy makers at Nomos Labs LLC., formerly; Counterparty, Mastercoin/Omni Protocol, FCC (Federal Communication Commission).'
 	 }
   ];
-  
+
   function getTeam() {
 	 var bios = [];
 	 var names = [];
 	 var titles = [];
-	 
+
 	 var realTeam = angular.copy(team);
-	
+
 	 angular.forEach(realTeam, function (t) {
 		bios.push(t.bio);
 		names.push(t.name);
 		titles.push(t.title);
 	 });
-	 
+
 	 return $q.all([
 	   $translate(bios),
 		$translate(names),
@@ -155,17 +158,17 @@ app.factory('teamFactory', function ($translate, $q) {
 		bios = result[0];
 		names = result[1];
 		titles = result[2];
-		
+
 		angular.forEach(realTeam, function (t) {
 		  t.bio = bios[t.bio];
 		  t.title = titles[t.title];
 		  t.name = names[t.name];
 		});
-		
+
 		return realTeam;
 	 });
   }
-  
+
   return {
 	 getTeam: getTeam
   };
