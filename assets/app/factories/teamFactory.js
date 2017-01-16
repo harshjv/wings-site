@@ -53,7 +53,7 @@ app.factory('teamFactory', function ($translate, $q) {
 	 {
 		name: 'Harsh Vakharia',
 		pic: 'harsh',
-		title: 'Full Stack Developer',
+		title: 'Full Stack Engineer',
 		bio: 'Passionate engineer. Loves to create something people want, and admires simplicity. Harsh likes to experiment with Node.js and Docker. He develops FOSS and enjoys contributing back to open community.',
 		social: [{
 		  name: 'fb',
